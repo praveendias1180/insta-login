@@ -14,3 +14,5 @@ Login for each and every request (If you use server.js)
 
 https://github.com/dilame/instagram-private-api/blob/master/examples/session.example.ts
 
+See the 'new-server.js' file for session implementation.
+
