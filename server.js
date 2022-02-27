@@ -4,8 +4,18 @@ require('dotenv').config()
 const { IgApiClient } = require('instagram-private-api');
 
 app.post('/api/login', function (req, res) {
-    res.send('Login')
+    const ig = new IgApiClient();
+    ig.state.generateDevice(process.env.IG_USERNAME);
+    (async () => {
+        await ig.simulate.preLoginFlow();
+        const loggedInUser = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD)
+        process.nextTick(async () => await ig.simulate.postLoginFlow())
 
+        // Create UserFeed instance to get loggedInUser's posts
+        // const userFeed = ig.feed.user(loggedInUser.pk);
+        // const myPostsFirstPage = await userFeed.items();
+        res.send(loggedInUser)
+    })();
 })
 
 app.get('/api/feed', function (req, res) {
