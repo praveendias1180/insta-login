@@ -11,5 +11,8 @@
     "range-quest"
   ],
   "author": "Praveen Dias",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "instagram-private-api": "^1.45.3"
+  }
 }
