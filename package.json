@@ -1,0 +1,15 @@
+{
+  "name": "insta-login",
+  "version": "1.0.0",
+  "description": "Instagram API Login",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "insta",
+    "range-quest"
+  ],
+  "author": "Praveen Dias",
+  "license": "MIT"
+}
